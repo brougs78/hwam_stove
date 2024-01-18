@@ -66,11 +66,11 @@ async def async_setup_platform(hass, config, async_add_entities,
         pystove.DATA_TIME_TO_NEW_FIREWOOD: [
             None, None, "Time To New Firewood {}"],
         pystove.DATA_VALVE1_POSITION: [
-            None, None, "Valve 1 Postition {}"],
+            None, None, "Valve 1 Position {}"],
         pystove.DATA_VALVE2_POSITION: [
-            None, None, "Valve 2 Postition {}"],
+            None, None, "Valve 2 Position {}"],
         pystove.DATA_VALVE3_POSITION: [
-            None, None, "Valve 3 Postition {}"],
+            None, None, "Valve 3 Position {}"],
         pystove.DATA_FIRMWARE_VERSION: [
             None, None, "Firmware Version {}"],
     }
