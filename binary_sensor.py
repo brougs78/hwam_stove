@@ -7,8 +7,9 @@ https://github.com/mvn23/hwam_stove
 import logging
 
 from homeassistant.components.binary_sensor import (ENTITY_ID_FORMAT,
-                                                    BinarySensorEntity)
-from homeassistant.const import DEVICE_CLASS_BATTERY
+                                                    BinarySensorEntity,
+                                                    BinarySensorDeviceClass)
+# from homeassistant.const import SensorDeviceClass
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import async_generate_entity_id
 
@@ -19,6 +20,7 @@ DEPENDENCIES = ['hwam_stove']
 
 DEVICE_CLASS_PROBLEM = 'problem'
 DEVICE_CLASS_SAFETY = 'safety'
+DEVICE_CLASS_BATTERY = BinarySensorDeviceClass.BATTERY
 
 _LOGGER = logging.getLogger(__name__)
 
