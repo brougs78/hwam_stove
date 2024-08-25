@@ -6,7 +6,7 @@ https://github.com/mvn23/hwam_stove
 """
 import logging
 
-from homeassistant.components.fan import DOMAIN, SUPPORT_SET_SPEED, FanEntity
+from homeassistant.components.fan import DOMAIN, FanEntityFeature, FanEntity
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.util import slugify
 
@@ -15,6 +15,7 @@ from custom_components.hwam_stove import (DATA_HWAM_STOVE, DATA_PYSTOVE,
 
 _LOGGER = logging.getLogger(__name__)
 
+SUPPORT_SET_SPEED = FanEntityFeature.SET_SPEED
 
 async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
