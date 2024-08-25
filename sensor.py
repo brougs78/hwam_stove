@@ -8,8 +8,8 @@ import logging
 
 from datetime import datetime, timedelta
 
-from homeassistant.components.sensor import ENTITY_ID_FORMAT, SensorEntity
-from homeassistant.const import DEVICE_CLASS_TEMPERATURE, TEMP_CELSIUS
+from homeassistant.components.sensor import ENTITY_ID_FORMAT, SensorEntity, SensorDeviceClass
+from homeassistant.const import UnitOfTemperature
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import async_generate_entity_id
 
@@ -20,6 +20,8 @@ DEPENDENCIES = ['hwam_stove']
 UNIT_PERCENT = '%'
 _LOGGER = logging.getLogger(__name__)
 
+DEVICE_CLASS_TEMPERATURE = SensorDeviceClass.TEMPERATURE
+TEMP_CELSIUS = UnitOfTemperature.CELSIUS
 
 async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
