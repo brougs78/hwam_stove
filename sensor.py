@@ -8,8 +8,8 @@ import logging
 
 from datetime import datetime, timedelta
 
-from homeassistant.components.sensor import ENTITY_ID_FORMAT, SensorEntity
-from homeassistant.const import DEVICE_CLASS_TEMPERATURE, TEMP_CELSIUS
+from homeassistant.components.sensor import ENTITY_ID_FORMAT, SensorEntity, SensorDeviceClass
+from homeassistant.const import UnitOfTemperature
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import async_generate_entity_id
 
@@ -20,6 +20,8 @@ DEPENDENCIES = ['hwam_stove']
 UNIT_PERCENT = '%'
 _LOGGER = logging.getLogger(__name__)
 
+DEVICE_CLASS_TEMPERATURE = SensorDeviceClass.TEMPERATURE
+TEMP_CELSIUS = UnitOfTemperature.CELSIUS
 
 async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
@@ -66,11 +68,11 @@ async def async_setup_platform(hass, config, async_add_entities,
         pystove.DATA_TIME_TO_NEW_FIREWOOD: [
             None, None, "Time To New Firewood {}"],
         pystove.DATA_VALVE1_POSITION: [
-            None, None, "Valve 1 Postition {}"],
+            None, None, "Valve 1 Position {}"],
         pystove.DATA_VALVE2_POSITION: [
-            None, None, "Valve 2 Postition {}"],
+            None, None, "Valve 2 Position {}"],
         pystove.DATA_VALVE3_POSITION: [
-            None, None, "Valve 3 Postition {}"],
+            None, None, "Valve 3 Position {}"],
         pystove.DATA_FIRMWARE_VERSION: [
             None, None, "Firmware Version {}"],
     }
